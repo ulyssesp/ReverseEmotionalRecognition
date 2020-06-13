@@ -1,0 +1,18 @@
+service BaislessProto {
+    rpc Exchange(BaislessMessageProto) returns (BaislessProto) {}
+}
+
+message BaislessMessageProto {
+    oneof baisless-message-data {
+        ImageMessageProto image_data = 1;
+        FloatMessageProto = 2;
+    }
+}
+
+message ImageMessageProto {
+    bytes compressed_data = 1;
+}
+
+message FloatMessageProto {
+    float float_data = 1;
+}
