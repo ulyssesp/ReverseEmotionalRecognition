@@ -11,7 +11,16 @@ class FACSStoreComponentEditor : Editor
     protected void OnEnable()
     {
         facsStore = (FACSStoreComponent)target;
-        JsonUtility.FromJsonOverwrite(File.ReadAllText(Application.persistentDataPath + facsStore.FACStoreJSONPath), facsStore.facsstore);
+        string path = Path.Combine(Application.persistentDataPath, facsStore.FACStoreJSONPath);
+        if (File.Exists(path))
+        {
+            JsonUtility.FromJsonOverwrite(File.ReadAllText(path), facsStore.facsstore);
+        }
+        else
+        {
+            JsonUtility.FromJsonOverwrite(File.ReadAllText(Path.Combine(Application.streamingAssetsPath, facsStore.FACStoreJSONPath)), facsStore.facsstore);
+        }
+
         Debug.Log($"Loaded {facsStore.facsstore.FacialActions.Length} facial actions");
     }
 
@@ -29,7 +38,7 @@ class FACSStoreComponentEditor : Editor
             // Undo.RecordObject(facsStore.facsstore, "Added facial action");
             // AssetDatabase.SaveAssets();
             string jsondata = JsonUtility.ToJson(facsStore.facsstore);
-            File.WriteAllText(Application.persistentDataPath + facsStore.FACStoreJSONPath, jsondata);
+            File.WriteAllText(Path.Combine(Application.persistentDataPath, facsStore.FACStoreJSONPath), jsondata);
 
             foreach (Transform change in changed)
             {
