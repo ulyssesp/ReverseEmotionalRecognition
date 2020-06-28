@@ -10,6 +10,7 @@ public class BrainAdder : MonoBehaviour
     public Transform root;
     public NNModel nnModel;
     public RenderTexture camTexture;
+    public int MaxStep;
     public void Start()
     {
         List<Transform> transforms = FindRecursive(root);
@@ -17,6 +18,11 @@ public class BrainAdder : MonoBehaviour
         for (int i = 0; i < transforms.Count; i++)
         {
             Transform transform = transforms[i];
+            if (transform.gameObject.name.Contains("Tongue") || transform.gameObject.name.Contains("Teeth"))
+            {
+                continue;
+            }
+
             BehaviorParameters bp = transform.GetComponent<BehaviorParameters>();
             if (bp == null)
             {
@@ -24,9 +30,8 @@ public class BrainAdder : MonoBehaviour
             }
 
             bp.BehaviorName = "SnapperController";
-            bp.BrainParameters.VectorObservationSize = 14;
-            bp.BrainParameters.NumStackedVectorObservations = 3;
-            bp.BrainParameters.NumStackedVectorObservations = 4;
+            bp.BrainParameters.VectorObservationSize = 55;
+            // bp.BrainParameters.NumStackedVectorObservations = 4;
             bp.BrainParameters.VectorActionSpaceType = SpaceType.Continuous;
             bp.BrainParameters.VectorActionSize = new int[] { 3, 3, 3 };
             bp.Model = nnModel;
@@ -38,8 +43,8 @@ public class BrainAdder : MonoBehaviour
             }
 
             rta.Index = i;
-            rta.MaxStep = 400;
-
+            rta.IndexRange = transforms.Count;
+            rta.MaxStep = MaxStep;
 
             DecisionRequester dr = transform.GetComponent<DecisionRequester>();
             if (dr == null)

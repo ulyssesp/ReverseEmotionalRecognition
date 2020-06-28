@@ -1,0 +1,237 @@
+{
+    "FacialActions": [
+        {
+            "ActionName": "UA4-BrowLowerer",
+            "value": {
+                "Transforms": [
+                    {
+                        "VectorName": "BrowIn_L_cntr",
+                        "value": {
+                            "x": 0.02499999664723873,
+                            "y": -0.02499999664723873,
+                            "z": 0.0
+                        }
+                    },
+                    {
+                        "VectorName": "BrowIn_R_cntr",
+                        "value": {
+                            "x": 0.02499999664723873,
+                            "y": -0.02499999664723873,
+                            "z": 0.0
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "ActionName": "UA2-OuterBrowRaise",
+            "value": {
+                "Transforms": [
+                    {
+                        "VectorName": "BrowOut_L_cntr",
+                        "value": {
+                            "x": 0.0,
+                            "y": 0.02499999664723873,
+                            "z": 0.0
+                        }
+                    },
+                    {
+                        "VectorName": "BrowOut_R_cntr",
+                        "value": {
+                            "x": 0.0,
+                            "y": 0.02499999664723873,
+                            "z": 0.0
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "ActionName": "UA2-InnerBrowRaise",
+            "value": {
+                "Transforms": [
+                    {
+                        "VectorName": "Brow_cntr",
+                        "value": {
+                            "x": 0.0,
+                            "y": 0.02499999664723873,
+                            "z": 0.0
+                        }
+                    },
+                    {
+                        "VectorName": "BrowIn_L_cntr",
+                        "value": {
+                            "x": 0.0,
+                            "y": 0.02499999664723873,
+                            "z": 0.0
+                        }
+                    },
+                    {
+                        "VectorName": "BrowIn_R_cntr",
+                        "value": {
+                            "x": 0.0,
+                            "y": 0.02499999664723873,
+                            "z": 0.0
+                        }
+                    },
+                    {
+                        "VectorName": "Head_cntr",
+                        "value": {
+                            "x": 0.0,
+                            "y": 0.02499999664723873,
+                            "z": 0.0
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "ActionName": "UA2-UpperLidRaise",
+            "value": {
+                "Transforms": [
+                    {
+                        "VectorName": "Brow_cntr",
+                        "value": {
+                            "x": 4.670646376325749e-7,
+                            "y": 0.0,
+                            "z": 0.0
+                        }
+                    },
+                    {
+                        "VectorName": "BrowIn_L_cntr",
+                        "value": {
+                            "x": 0.0,
+                            "y": 0.011550342664122582,
+                            "z": 0.0
+                        }
+                    },
+                    {
+                        "VectorName": "BrowIn_R_cntr",
+                        "value": {
+                            "x": 0.0021638572216033937,
+                            "y": 0.017217198386788369,
+                            "z": 0.0
+                        }
+                    },
+                    {
+                        "VectorName": "LwrLid_L_cntr",
+                        "value": {
+                            "x": 0.0,
+                            "y": -0.002952664392068982,
+                            "z": 0.0
+                        }
+                    },
+                    {
+                        "VectorName": "LwrLid_R_cntr",
+                        "value": {
+                            "x": 0.0,
+                            "y": -0.0007284564198926091,
+                            "z": 0.0
+                        }
+                    },
+                    {
+                        "VectorName": "UprLid_L_cntr",
+                        "value": {
+                            "x": 0.0,
+                            "y": 0.02499999664723873,
+                            "z": 0.0
+                        }
+                    },
+                    {
+                        "VectorName": "UprLid_R_cntr",
+                        "value": {
+                            "x": 0.0,
+                            "y": 0.02499999664723873,
+                            "z": 0.0
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "ActionName": "UA6-CheekRaise",
+            "value": {
+                "Transforms": [
+                    {
+                        "VectorName": "Cheek_L_cntr",
+                        "value": {
+                            "x": 0.0,
+                            "y": 0.02499999664723873,
+                            "z": 0.0
+                        }
+                    },
+                    {
+                        "VectorName": "Cheek_R_cntr",
+                        "value": {
+                            "x": 0.0,
+                            "y": 0.02499999664723873,
+                            "z": 0.0
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "ActionName": "UA9-NoseWrinkle",
+            "value": {
+                "Transforms": [
+                    {
+                        "VectorName": "Brow_cntr",
+                        "value": {
+                            "x": 0.004367135930806398,
+                            "y": 0.0,
+                            "z": 0.0
+                        }
+                    },
+                    {
+                        "VectorName": "Nose_cntr",
+                        "value": {
+                            "x": 0.0082015972584486,
+                            "y": 0.0,
+                            "z": 0.0
+                        }
+                    },
+                    {
+                        "VectorName": "Nose_L_cntr",
+                        "value": {
+                            "x": 0.0,
+                            "y": 0.02499999664723873,
+                            "z": 0.0
+                        }
+                    },
+                    {
+                        "VectorName": "Nose_R_cntr",
+                        "value": {
+                            "x": 0.0,
+                            "y": 0.02499999664723873,
+                            "z": 0.0
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "ActionName": "UA10-UpperLiftRaise",
+            "value": {
+                "Transforms": [
+                    {
+                        "VectorName": "UprLip_L_2_cntr",
+                        "value": {
+                            "x": 0.004412006586790085,
+                            "y": 0.02499999664723873,
+                            "z": 0.0
+                        }
+                    },
+                    {
+                        "VectorName": "UprLip_R_2_cntr",
+                        "value": {
+                            "x": -0.004374098032712936,
+                            "y": 0.02499999664723873,
+                            "z": 0.0
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

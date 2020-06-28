@@ -2,8 +2,8 @@ behaviors:
   SnapperController:
     trainer_type: ppo
     hyperparameters:
-      batch_size: 2048
-      buffer_size: 40960
+      batch_size: 4096
+      buffer_size: 409600
       learning_rate: 0.00005
       beta: 0.005
       epsilon: 0.2
@@ -11,7 +11,7 @@ behaviors:
       num_epoch: 3
       learning_rate_schedule: linear
     network_settings:
-      normalize: true
+      normalize: false
       hidden_units: 512
       num_layers: 3
       vis_encode_type: simple
@@ -23,17 +23,17 @@ behaviors:
         gamma: 0.99
         strength: 0.05
     keep_checkpoints: 5
-    max_steps: 6000000
-    time_horizon: 400
+    max_steps: 10000000
+    time_horizon: 1024
     summary_freq: 30000
     threaded: true
     # trainer_type: sac
     # hyperparameters:
     #   learning_rate: 0.0003
     #   learning_rate_schedule: constant
-    #   batch_size: 512
-    #   buffer_size: 512000
-    #   buffer_init_steps: 96000
+    #   batch_size: 1024
+    #   buffer_size: 1024000
+    #   buffer_init_steps: 5000
     #   tau: 0.005
     #   steps_per_update: 20.0
     #   save_replay_buffer: false
@@ -41,7 +41,7 @@ behaviors:
     # network_settings:
     #   normalize: false
     #   hidden_units: 256
-    #   num_layers: 2
+    #   num_layers: 3
     #   vis_encode_type: simple
     # reward_signals:
     #   extrinsic:
@@ -49,9 +49,22 @@ behaviors:
     #     strength: 1.0
     #   curiosity:
     #     gamma: 0.95
-    #     strength: 0.05
+    #     strength: 0.02
     # keep_checkpoints: 5
-    # max_steps: 6000000
-    # time_horizon: 400
+    # max_steps: 3000000
+    # time_horizon: 128
     # summary_freq: 30000
     # threaded: true
+parameter_randomization:
+  resampling-interval: 3200
+  emotion:
+    sampler-type: uniform
+    min_value: 7
+    max_value: 8
+
+curriculum:
+  SnapperController:
+    measure: progress
+    thresholds: [0.1, 0.3, 0.5, 0.7, 0.8]
+    parameters:
+      emotion-reward: [64, 32, 16, 8, 4, 2]

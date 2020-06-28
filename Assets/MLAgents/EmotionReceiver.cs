@@ -14,6 +14,7 @@ public class EmotionReceiver : MonoBehaviour
     public float Neutral = 0;
     public float Sad = 0;
     public float Surprised = 0;
+    public float Contempt = 0;
 
     public void Start()
     {
@@ -25,6 +26,7 @@ public class EmotionReceiver : MonoBehaviour
         m_osc.SetAddressHandler("/neutral", OnReceiveNeutral);
         m_osc.SetAddressHandler("/sad", OnReceiveSad);
         m_osc.SetAddressHandler("/surprised", OnReceiveSurprised);
+        m_osc.SetAddressHandler("/contempt", OnReceiveSurprised);
     }
     private void OnReceiveFearful(OscMessage message)
     {
